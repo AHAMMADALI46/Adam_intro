@@ -102,8 +102,18 @@ ITTFL: Intent to treat (Ready to treat)
        ELSE ITTFL="N";
 SAFL: SAFETY POPULATION FLAG
       subject should receive atleast one dose and one post-baseline
+      IF RFXSTDTC NE ' ' then SAFL='Y';
       
-COMPFL
+COMPFL: Complete Population Flag: Whoever subjects successfully completed studies.
+
+IF DSTERM="COMPLETED" AND DSCAT="DISPOSITION EVENT" AND EPOCH="FOLLOW-UP" AND DSS
+THEN COMPFL='Y';
+ELSE COMPFL="N";
+
+FUFL
+PPROTFL
+
+
 
 
 Sequence No.: If it is more than one record then you have generate sequence number in SDTM and same way sub. If subject takes multiple treatements create sequence number.
