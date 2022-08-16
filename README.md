@@ -113,6 +113,15 @@ ELSE COMPFL="N";
 FUFL
 PPROTFL
 
+Baseline flags
+Heightbl
+Weightbl
+sysbl
+diabl
+Tempbl
+prbl
+BMI
+
 
 
 
