@@ -72,6 +72,38 @@ BRTHDTC-------BRTHDT
 RFICDTC-------RFICDT
 DTHDTC--------DTHDT
 RFPENDTC-------RFPENDT
+RANDDT---------RANDDT(RANDOMIZATION DATE)
+
+Country---------Country
+
+Population Flags:
+ENRFL--------Enrollment flag
+             If RFICDTC NE ' ' Then ENRFL="Y"; ELSE ENRFL="N"
+SCRNFL-----Screening failure Population Flag----Subjects is not meeting eligibilty criteria.
+          IF IEORRES="N" AND IECAT="INCLUSION" THEN SCRNFL="Y";
+          else if IEORRES="Y" AND IECAT="EXCLUSION" THEN SCRNFL="Y";
+          else SCRNFL="N";
+          
+          ELIGIBIL---------YES OR NO
+Screen population
+
+if ELIGIBIL="NO" Then SCRNFL="Y"
+Else SCRNFL="N";
+
+
+RANDFL------Random Population flag
+
+IF DSTERM="RANDOMIZED" AND DSCAT="PROTOCOL MILESTONES" AND DSSTDTC NE ' ' THEN RANDFL="Y";
+RANDDT=DSSTDTC;
+else RANDFL="N";
+
+ITTFL: Intent to treat (Ready to treat)
+       IF RANDDT NE. AND RANDNO NE. THEN ITTFL="Y";
+       ELSE ITTFL="N";
+SAFL: SAFETY POPULATION FLAG
+      
+COMPFL
+
 
 Sequence No.: If it is more than one record then you have generate sequence number in SDTM and same way sub. If subject takes multiple treatements create sequence number.
 
