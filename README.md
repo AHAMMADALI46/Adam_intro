@@ -101,6 +101,7 @@ ITTFL: Intent to treat (Ready to treat)
        IF RANDDT NE. AND RANDNO NE. THEN ITTFL="Y";
        ELSE ITTFL="N";
 SAFL: SAFETY POPULATION FLAG
+      subject should receive atleast one dose and one post-baseline
       
 COMPFL
 
